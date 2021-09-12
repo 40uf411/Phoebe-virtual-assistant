@@ -1,0 +1,31 @@
+.histo{
+    padding: 0.5rem;
+}
+.row {
+    margin: 0.5rem;
+}
+
+.CmdItemRow  {
+    margin-left: 5rem;
+    padding: 1rem;
+    background: #2d7ef8;
+    border-radius: .75rem 0 .75rem .75rem;
+    /*box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;*/
+}
+.PhoebeRow {
+    margin-right: 5rem;
+    padding: 1rem;
+    background: #f82d60;
+    border-radius: 0 .75rem .75rem .75rem;
+}
+.bold{
+    font-weight: bold;
+}
+.dateTime{
+    font-style: italic;
+    color: #333;
+    font-size: 0.8rem;
+}
+.bottomRowCmd{
+    padding: .5rem;
+}
