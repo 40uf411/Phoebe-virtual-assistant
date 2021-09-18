@@ -35,9 +35,18 @@
               </packing>
             </child>
             <child>
-              <object class="GtkTextView" id="MsgContent">
+              <object class="GtkLabel" id="MsgContent">
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="xpad">5</property>
+                <property name="label" translatable="yes">Phoebe Execute this action</property>
+                <property name="justify">right</property>
+                <property name="selectable">True</property>
+                <property name="ellipsize">end</property>
+                <property name="single-line-mode">True</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="expand">False</property>
