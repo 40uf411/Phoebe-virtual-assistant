@@ -23,11 +23,10 @@ class PingPlugin(Plugin):
         self.builder.add_from_file(temp)
         
         self.box = self.builder.get_object("pingBox")
-        print(self.box)
         self.distLb = self.builder.get_object("dist")
         self.timeLb = self.builder.get_object("time")
         
         self.distLb.set_text("Pinging: %s" % (self.dist))
         self.timeLb.set_text("Time: %.2f Seconds" % (ping(self.dist)))
         
-        return {"msg":"Here is the time ", "content":self.box}
+        return {"msg":"Pong!", "content":self.box}

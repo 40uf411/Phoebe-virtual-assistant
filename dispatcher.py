@@ -13,6 +13,8 @@ class Dispatcher:
             resolver = self.plugins['time']()
         elif tokens[0] == 'ping':
             resolver = self.plugins['ping']()
+        elif tokens[0] == 'calendar':
+            resolver = self.plugins['calendar']()
         else:
             return {"msg":"Sorry commad not found", "content":None}
         return resolver(command)

@@ -53,3 +53,15 @@
     border-radius: 5px;
     padding: 1rem;
 }
+/* Calendar plugin */
+.calendarPlugin_box{
+    background-color: rgba(110, 39, 39, 0.5);
+    color: #ddd;
+    border-radius: 5px;
+    padding: .5rem;
+}
+.calendarPlugin_calendar{
+    background-color: rgba(80, 80, 80, 0.5);
+    padding: .5rem;
+    border-radius: 5px;
+}
