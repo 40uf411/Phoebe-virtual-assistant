@@ -26,13 +26,15 @@ class TimePlugin(Plugin):
             m = 'in %s.' % (' '.join(tokens[1:]))
         
         box = gtk.Box(spacing=10, orientation="vertical")
+        boxContext = box.get_style_context()
+        theme = 'light' if int(now.strftime("%H")) < 20 else 'dark'
+        boxContext.add_class("timePlugin_clock_%s" % (theme))
         # Clock
-        
         clockLabel = gtk.Label(
             label=now.strftime("%H : %M")
         )
         clockLabelContext = clockLabel.get_style_context()
-        clockLabelContext.add_class("timePlugin_clock")
+        clockLabelContext.add_class("timePlugin_clockLbl")
         box.add(clockLabel)
         # Timezone
         tLabel = gtk.Label(

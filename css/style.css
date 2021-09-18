@@ -31,8 +31,25 @@
 }
 
 /* Time plugin */
-.timePlugin_clock{
+.timePlugin_clock_light{
+    background-color: rgb(231, 131, 131);
+    border-radius: 5px;
+    padding: 1rem;
+}
+.timePlugin_clock_dark{
+    background-color: rgb(59, 33, 33);
+    border-radius: 5px;
+    padding: 1rem;
+}
+.timePlugin_clockLbl{
     font-weight: bold;
     font-size: 3rem;
-    padding: 1rem 1rem;
+    padding: .5rem ;
+}
+/* Ping plugin */
+.pingPlugin_pingBox{
+    background-color: rgb(59, 33, 33);
+    color: #ddd;
+    border-radius: 5px;
+    padding: 1rem;
 }

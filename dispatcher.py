@@ -7,8 +7,12 @@ class Dispatcher:
         return self.dispatch(command)
     
     def dispatch(self, command:str):
-        if "time" in command:
+        tokens = command.split()
+        
+        if tokens[0] == 'time':
             resolver = self.plugins['time']()
+        elif tokens[0] == 'ping':
+            resolver = self.plugins['ping']()
         else:
             return {"msg":"Sorry commad not found", "content":None}
         return resolver(command)
