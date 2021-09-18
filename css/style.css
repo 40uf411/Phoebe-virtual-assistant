@@ -29,3 +29,10 @@
 .bottomRowCmd{
     padding: .5rem;
 }
+
+/* Time plugin */
+.timePlugin_clock{
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 1rem 1rem;
+}

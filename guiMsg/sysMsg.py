@@ -15,6 +15,7 @@ class SysMsg(gtk.ListBoxRow):
         #self.content = self.builder.get_object("SentItemListBox")
         self.row = self.builder.get_object("PhoebeRow")
         self.msgContent = self.builder.get_object("MsgContent")
+        self.phoebeContent = self.builder.get_object("PhoebeContent")
         self.time = self.builder.get_object("time")
         self.date = self.builder.get_object("date")
         
@@ -23,7 +24,9 @@ class SysMsg(gtk.ListBoxRow):
         today = datetime.today()
         self.date.set_text(today.strftime("%d/%m/%Y"))
         self.msgContent.set_text(msg)
-        
+        if content != None:
+            self.phoebeContent.add(content)
+        self.phoebeContent.show_all()
         self.row.show()
 
 if __name__ == "__main__":

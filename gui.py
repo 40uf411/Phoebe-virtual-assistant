@@ -3,11 +3,13 @@ gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk as gtk 
 from gi.repository import Gdk as gdk 
-from msg import Msg
-from sysMsg import SysMsg
+from guiMsg.msg import Msg
+from guiMsg.sysMsg import SysMsg
 
+from dispatcher import Dispatcher
 
 class Main(gtk.Window):
+    dspr = Dispatcher()
     def __init__(self) -> None:
         temp = "./templates/main.glade"
         self.builder = gtk.Builder()
@@ -51,7 +53,8 @@ class Main(gtk.Window):
             e = Msg(msg, self.execCmd)
             self.histo.add(e.row)
             self.cmd.set_text('')
-            e = SysMsg("Hi! I can't do much now.")
+            result = self.dspr(msg)
+            e = SysMsg(**result)
             self.histo.add(e.row)
         
 if __name__ == "__main__":
