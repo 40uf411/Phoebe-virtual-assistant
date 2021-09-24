@@ -15,16 +15,19 @@ class Main(gtk.Window):
         temp = "./templates/main.glade"
         self.builder = gtk.Builder()
         self.builder.add_from_file(temp)
-                
-        menubutton = self.builder.get_object("more")
-        menu = gtk.Menu()
-        menubutton.set_popup(menu)
-        for count in range(1, 6):
-            menuitem = gtk.MenuItem(label="Item %i" % (count))
-            menuitem.connect("activate", self.on_menuitem_activated)
-            menu.append(menuitem)
-        menu.show_all()
+
+        self.aboutDialog = self.builder.get_object("aboutDialog")
         
+        self.menubutton = self.builder.get_object("more")
+        self.menu = gtk.Menu()
+        self.menubutton.set_popup(self.menu)
+        self.histMenuBtn = gtk.MenuItem(label="History")
+        self.menu.append(self.histMenuBtn)
+        self.aboutMenuBtn = gtk.MenuItem(label="About")
+        self.aboutMenuBtn.connect("activate", self.showAbout)
+        self.menu.append(self.aboutMenuBtn)
+        self.menu.show_all()
+
     
         self.histo = self.builder.get_object("histo")
         self.histo.show_all()
@@ -53,7 +56,17 @@ class Main(gtk.Window):
         self.main = self.builder.get_object("main")
         self.main.connect("delete-event", gtk.main_quit)
         self.main.show()
+    
+    def showAbout(self, w):
+        temp = "./templates/about.glade"
+        bldr = gtk.Builder()
+        bldr.add_from_file(temp)
         
+        dialog = bldr.get_object("aboutDialog")
+        dialog.show_all()
+        dialog.run()
+        dialog.destroy() 
+    
     def on_menuitem_activated(self, menuitem):
         print("%s Activated" % (menuitem.get_label()))
         
